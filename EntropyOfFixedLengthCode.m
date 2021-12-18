@@ -23,3 +23,11 @@ for element= 1:length(counts)
 end
 fprintf("\n Results: \n String Count: %d   Total Probability: %.2f    Information Amount: %.4f    Entropy: %.4f", denm,sum(prob),information, entropy )
 
+% ------------------------------- Efficiency -----------------------------
+
+bits=ceil(log2(length(counts)));
+L_avg= bits*sum(prob);
+L_min=entropy;
+efficiency=L_min/L_avg;
+fprintf("\n Average Length word: %d - Efficiency: %.4f", bits,efficiency);
+
